@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Localify - Site de présentation et de prise en main" />
+  <title>Localify · Présentation & Prise en main</title>
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <div class="topbar">
+        <span class="badge" data-i18n="app.versionBadge">Localify Web V6.5</span>
+        <div class="lang-switcher" aria-label="Language switcher">
+          <button type="button" class="lang-btn" data-lang="fr">FR</button>
+          <button type="button" class="lang-btn" data-lang="en">EN</button>
+        </div>
+      </div>
+
+      <h1 data-i18n="hero.title">Site de présentation & prise en main</h1>
+      <p class="subtitle" data-i18n="hero.subtitle">
+        Bienvenue sur Localify : ton lecteur musical auto-hébergé.
+      </p>
+      <div class="cta-row">
+        <a class="btn primary" href="#demarrage" data-i18n="hero.ctaStart">Démarrage rapide</a>
+        <a class="btn" href="#fonctionnalites" data-i18n="hero.ctaFeatures">Fonctionnalités</a>
+        <a class="btn" href="#exploitation" data-i18n="hero.ctaOps">PM2 & Tailscale</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="demarrage">
+      <h2 data-i18n="quickstart.title">🚀 Démarrage rapide</h2>
+      <ol class="steps">
+        <li data-i18n="quickstart.step1">Installer Node.js LTS (18+ recommandé, 20+ conseillé).</li>
+        <li data-i18n="quickstart.step2">Vérifier l'installation : node -v et npm -v.</li>
+        <li data-i18n="quickstart.step3">Installer les dépendances : npm install.</li>
+        <li data-i18n="quickstart.step4">Lancer Localify : npm start.</li>
+        <li data-i18n="quickstart.step5">Ouvrir : http://localhost:3000.</li>
+      </ol>
+      <p data-i18n="quickstart.defaultAccount">Compte par défaut : admin / admin123456 (à changer).</p>
+    </section>
+
+    <section id="fonctionnalites">
+      <h2 data-i18n="features.title">🎧 Ce que Localify propose</h2>
+      <div class="grid">
+        <article class="card" data-i18n="features.player"></article>
+        <article class="card" data-i18n="features.library"></article>
+        <article class="card" data-i18n="features.home"></article>
+        <article class="card" data-i18n="features.widget"></article>
+        <article class="card" data-i18n="features.theme"></article>
+        <article class="card" data-i18n="features.server"></article>
+      </div>
+    </section>
+
+    <section>
+      <h2 data-i18n="music.title">📁 Structure musicale recommandée</h2>
+      <pre data-i18n="music.tree">music/
+└── Artiste/
+    └── Album/
+        ├── 01 - Titre.mp3
+        ├── 02 - Titre.flac
+        └── cover.jpg</pre>
+      <ul>
+        <li data-i18n="music.rule1">1 dossier par artiste, 1 dossier par album.</li>
+        <li data-i18n="music.rule2">Numéroter les pistes pour garder l'ordre.</li>
+        <li data-i18n="music.rule3">Ajouter cover.jpg ou folder.jpg dans chaque album.</li>
+      </ul>
+    </section>
+
+    <section id="exploitation">
+      <h2 data-i18n="ops.title">⚙️ Exploitation stable & accès distant</h2>
+      <div class="grid">
+        <article class="card">
+          <h3 data-i18n="ops.pm2Title">PM2 (24/7 recommandé)</h3>
+          <pre>npm install -g pm2
+pm2 start server.js --name localify
+pm2 logs localify
+pm2 restart localify</pre>
+        </article>
+        <article class="card">
+          <h3 data-i18n="ops.tailscaleTitle">Tailscale (accès privé)</h3>
+          <p data-i18n="ops.tailscaleDesc">Utilise Tailscale pour accéder à Localify hors de chez toi sans exposer de port public.</p>
+          <p data-i18n="ops.tailscaleExample">Exemple : http://100.x.y.z:3000</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2 data-i18n="troubleshoot.title">🧯 Dépannage express</h2>
+      <ul>
+        <li data-i18n="troubleshoot.issue1">EADDRINUSE : le port 3000 est déjà utilisé.</li>
+        <li data-i18n="troubleshoot.issue2">Bibliothèque vide : vérifier music/ et sa structure.</li>
+        <li data-i18n="troubleshoot.issue3">Covers absentes : ajouter cover.jpg ou folder.jpg.</li>
+        <li data-i18n="troubleshoot.issue4">Widget bloqué : autoriser les popups navigateur.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <span data-i18n="footer.text">Localify Web V6.5 · Présentation de prise en main</span>
+  </footer>
+
+  <script src="./assets/js/i18n.js"></script>
+</body>
+</html>
